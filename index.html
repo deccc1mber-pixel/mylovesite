@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffe6f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-bottom: 80px; /* увеличили отступ, чтобы сердце не закрывало */
+            color: #ff3366;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        /* Большое сердце */
+        .heart-btn {
+            position: relative;
+            width: 150px;
+            height: 135px;
+            background-color: red;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .heart-btn:hover {
+            transform: rotate(-45deg) scale(1.2);
+            box-shadow: 0 0 20px pink;
+        }
+
+        .heart-btn::before,
+        .heart-btn::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 135px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart-btn::before {
+            top: -75px;
+            left: 0;
+        }
+
+        .heart-btn::after {
+            left: 75px;
+            top: 0;
+        }
+
+        .heart-link {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Нажми на сердце</h1>
+
+    <a href="page2.html" class="heart-link">
+        <div class="heart-btn"></div>
+    </a>
+
+</body>
+</html>
